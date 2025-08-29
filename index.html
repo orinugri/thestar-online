@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>thestar-online — Portfolio & Games</title>
+  <meta name="description" content="thestar-online: 개인 포트폴리오 & 게임 프로젝트(Outergochi 등) 소개 사이트" />
+  <meta name="theme-color" content="#0f172a" />
+  <style>
+    :root{
+      --bg: #0b1020;         /* 배경 */
+      --panel: #121a32;      /* 카드/패널 */
+      --fg: #e7ecff;         /* 본문 글자 */
+      --muted: #97a3c0;      /* 보조 글자 */
+      --brand: #84cc16;      /* 포인트 */
+      --brand-2: #38bdf8;    /* 포인트2 */
+      --border: rgba(255,255,255,.08);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #f8fafc;
+        --panel: #ffffff;
+        --fg: #0f172a;
+        --muted: #475569;
+        --border: rgba(2,6,23,.08);
+        --shadow: 0 8px 20px rgba(2,6,23,.08);
+      }
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0; padding:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Arial, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", sans-serif;}
+    body{background:var(--bg); color:var(--fg);}
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; height:auto; display:block}
+    .wrap{max-width:1120px; margin:0 auto; padding:24px}
+
+    /* 헤더 */
+    .nav{position:sticky; top:0; z-index:10; backdrop-filter:saturate(150%) blur(8px); background:linear-gradient(180deg, rgba(11,16,32,.75), rgba(11,16,32,.35)); border-bottom:1px solid var(--border)}
+    .nav .inner{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 24px}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px}
+    .brand .logo{width:28px; height:28px; border-radius:8px; background:linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow:var(--shadow)}
+    .brand .title{font-size:18px}
+    .menu{display:flex; gap:16px}
+    .menu a{opacity:.9; padding:8px 10px; border-radius:10px}
+    .menu a:hover{background:rgba(132,204,22,.12); opacity:1}
+
+    /* 히어로 */
+    .hero{padding:72px 24px 36px}
+    .hero .grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:24px}
+    .hero h1{font-size:38px; line-height:1.15; margin:0 0 12px; letter-spacing:.2px}
+    .hero p{color:var(--muted); margin:0 0 24px}
+    .cta{display:flex; flex-wrap:wrap; gap:12px}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:12px 16px; border-radius:12px; border:1px solid var(--border); background:var(--panel); box-shadow:var(--shadow)}
+    .btn.primary{background:linear-gradient(135deg, rgba(132,204,22,.2), rgba(56,189,248,.15)); border-color:rgba(132,204,22,.35)}
+    .card{background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:18px}
+
+    /* 섹션 */
+    section{scroll-margin-top:80px}
+    .section{padding:40px 24px}
+    .section h2{font-size:22px; letter-spacing:.2px; margin:0 0 12px}
+    .muted{color:var(--muted)}
+
+    /* 프로젝트 */
+    .grid-projects{display:grid; grid-template-columns: repeat(3, 1fr); gap:16px}
+    .project{transition:transform .18s ease, box-shadow .18s ease}
+    .project:hover{transform:translateY(-2px); box-shadow:0 14px 30px rgba(0,0,0,.25)}
+    .project .thumb{aspect-ratio: 16/9; border-radius:12px; background:linear-gradient(135deg, rgba(132,204,22,.2), rgba(56,189,248,.15)); display:flex; align-items:center; justify-content:center; font-weight:700; opacity:.9}
+
+    /* 하단 */
+    .footer{padding:40px 24px 64px; border-top:1px solid var(--border); color:var(--muted)}
+
+    @media (max-width: 920px){
+      .hero .grid{grid-template-columns: 1fr}
+      .grid-projects{grid-template-columns: 1fr 1fr}
+    }
+    @media (max-width: 640px){
+      .menu{display:none}
+      .grid-projects{grid-template-columns: 1fr}
+      .hero h1{font-size:32px}
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="inner wrap" style="padding-left:0; padding-right:0">
+      <a class="brand" href="#top">
+        <span class="logo" aria-hidden="true"></span>
+        <span class="title">thestar-online</span>
+      </a>
+      <nav class="menu">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="grid">
+        <div>
+          <h1>Outergochi 같은 <span style="color:var(--brand)">게임</span>과<br/>개인 프로젝트를 모으는 곳</h1>
+          <p class="muted">Roblox·웹 기반 실험, 프로토타입, 데모를 정리합니다. 이 사이트는 GitHub Pages로 호스팅되고, 나중에 원하면 <code>thestar-online.com</code> 같은 커스텀 도메인으로 연결할 수 있어요.</p>
+          <div class="cta">
+            <a class="btn primary" href="#projects">프로젝트 보기</a>
+            <a class="btn" href="#contact">문의하기</a>
+          </div>
+        </div>
+        <div class="card">
+          <strong style="display:block; margin-bottom:8px">최근 업데이트</strong>
+          <ul class="muted" style="margin:0; padding-left:18px">
+            <li>Outergochi: UI 스플래시 & 캐릭터 선택 모듈 개선</li>
+            <li>Roman-era Survival: 스탯/이벤트 설계 정리</li>
+            <li>개인 포트폴리오 초기 배포</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <p class="muted" style="margin-bottom:16px">게임·툴·실험. 각 카드에 플레이/문서 링크를 붙여두세요.</p>
+      <div class="grid-projects">
+        <a class="project card" href="#" target="_blank" rel="noopener">
+          <div class="thumb">Outergochi</div>
+          <h3 style="margin:12px 0 6px">Outergochi</h3>
+          <p class="muted" style="margin:0">Tamagotchi-like 성장 시뮬. Roblox용.</p>
+        </a>
+        <a class="project card" href="#" target="_blank" rel="noopener">
+          <div class="thumb">Roman Survival</div>
+          <h3 style="margin:12px 0 6px">Roman-era Survival (Prototype)</h3>
+          <p class="muted" style="margin:0">기원전 이탈리아 소농 생존 로그라이크 시뮬.</p>
+        </a>
+        <a class="project card" href="#" target="_blank" rel="noopener">
+          <div class="thumb">Small Tools</div>
+          <h3 style="margin:12px 0 6px">Small Tools</h3>
+          <p class="muted" style="margin:0">개발 보조 스크립트 & 실험 모음.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2>About</h2>
+      <div class="card">
+        <p style="margin:0">게임 기획·스크립팅 중심의 개인 포트폴리오. Roblox/웹 기반 프로토타입과 상업화를 목표로 한 캐주얼 게임 시리즈를 실험하고 있습니다.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="card">
+        <p style="margin:0 0 8px">문의는 아래 채널 중 하나로 주세요.</p>
+        <ul class="muted" style="margin:0; padding-left:18px">
+          <li>이메일: <a href="mailto:hello@thestaronline.example">hello@thestaronline.example</a></li>
+          <li>GitHub: <a href="#" target="_blank" rel="noopener">github.com/yourname</a></li>
+          <li>Roblox: <a href="#" target="_blank" rel="noopener">roblox.com/users/yourid/profile</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    © <span id="y"></span> thestar-online. All rights reserved.
+  </footer>
+
+  <script>
+    // 연도 자동 표기 + 부드러운 스크롤
+    document.getElementById('y').textContent = new Date().getFullYear();
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href').slice(1);
+        const el=document.getElementById(id);
+        if(el){e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'})}
+      })
+    })
+  </script>
+</body>
+</html>
